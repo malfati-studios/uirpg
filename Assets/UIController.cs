@@ -78,6 +78,11 @@ public class UIController : MonoBehaviour
         combatLog.UpdateCharacterLog(action);
     }
     
+    public void UpdateCharacterLog(Action action, bool successful)
+    {
+        combatLog.UpdateCharacterLog(action, successful);
+    }
+    
     public void UpdateEnemyLog(Action action, int value)
     {
         combatLog.UpdateEnemyLog(action,value);
@@ -86,6 +91,11 @@ public class UIController : MonoBehaviour
     public void UpdateEnemyLog(Action action)
     {
         combatLog.UpdateEnemyLog(action);
+    }
+    
+    public void UpdateEnemyLog(Action action, bool successful)
+    {
+        combatLog.UpdateEnemyLog(action, successful);
     }
     
     #endregion

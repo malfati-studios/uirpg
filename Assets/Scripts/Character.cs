@@ -12,8 +12,6 @@ public class Character
     private int currentHp;
     private int attack;
     private int defense;
-    private int criticalChance;
-    private int evasion;
 
     public Character(string characterName, RaceInformation race, ClassInformation clazz, Image characterImage)
     {
@@ -67,7 +65,23 @@ public class Character
 
     public int CalculateDefense()
     {
-        return clazz.strVal * StatConstants.DEFENSE_STRENGTH_MULTIPLIER +
-               clazz.vitVal * StatConstants.DEFENSE_VITALITY_MULTIPLIER;
+        defense = clazz.strVal * StatConstants.DEFENSE_STRENGTH_MULTIPLIER +
+                  clazz.vitVal * StatConstants.DEFENSE_VITALITY_MULTIPLIER;
+        return defense;
+    }
+
+    public int CalculateHeal(int potionAmount)
+    {
+        return potionAmount + clazz.intVal * StatConstants.HEAL_INTELLIGENCE_MULTIPLIER;
+    }
+
+    public bool TakeDamage(int damage)
+    {
+        if (damage - defense > 0)
+        {
+            currentHp -= damage - defense;
+        }
+
+        return currentHp < 1;
     }
 }

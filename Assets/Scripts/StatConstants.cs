@@ -12,6 +12,6 @@
     public static double CRIT_DAMAGE_MULTIPLIER = 2;
     
     public static int DEFENSE_STRENGTH_MULTIPLIER = 3; 
-    public static int DEFENSE_VITALITY_MULTIPLIER = 2; 
-
+    public static int DEFENSE_VITALITY_MULTIPLIER = 2;
+    public static int HEAL_INTELLIGENCE_MULTIPLIER = 1;
 }

@@ -35,4 +35,24 @@ public class CharacterController : MonoBehaviour
     {
         return selectedCharacter.GetCharacterName();
     }
+
+    public int Attack()
+    {
+        return selectedCharacter.CalculateAttack();
+    }
+
+    public int Heal(int potionAmount)
+    {
+        return selectedCharacter.CalculateHeal(potionAmount);
+    }
+
+    public bool Evade(bool triedEvade)
+    {
+        return selectedCharacter.CalculateEvasion(triedEvade);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        selectedCharacter.TakeDamage(damage);
+    }
 }
