@@ -55,4 +55,9 @@ public class CharacterController : MonoBehaviour
     {
         selectedCharacter.TakeDamage(damage);
     }
+
+    public int GetCharacterMaxHP()
+    {
+        return selectedCharacter.CalculateMaxHP();
+    }
 }

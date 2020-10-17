@@ -81,7 +81,8 @@ public class Character
         {
             currentHp -= damage - defense;
         }
-
+        
+        UIController.instance.UpdateCharacterHP(currentHp);
         return currentHp < 1;
     }
 }

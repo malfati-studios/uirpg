@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class CombatController : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class CombatController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    private void Start()
+    {
+        UIController.instance.InitCharacterHP(CharacterController.instance.GetCharacterMaxHP());
+        UIController.instance.InitEnemyHP(EnemyController.instance.GetEnemyMaxHP());
     }
 
     public void Attack()

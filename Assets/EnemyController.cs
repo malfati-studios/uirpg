@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        currentEnemy = new Enemy("OrcRaider", null);
     }
 
     public Image GetEnemyImage()
@@ -58,5 +59,10 @@ public class EnemyController : MonoBehaviour
     public Action DecideAction()
     {
         return Enemy.DecideAction();
+    }
+
+    public int GetEnemyMaxHP()
+    {
+        return currentEnemy.CalculateMaxHP();
     }
 }

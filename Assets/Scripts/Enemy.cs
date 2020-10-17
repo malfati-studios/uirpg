@@ -63,7 +63,8 @@ public class Enemy : MonoBehaviour
         {
             currentHp -= damage - defense;
         }
-
+        
+        UIController.instance.UpdateEnemyHP(currentHp);
         return currentHp < 1;
     }
 
