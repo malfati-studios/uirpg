@@ -16,6 +16,12 @@ public class UIController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        characterImage.sprite = CharacterController.instance.GetCharacterImage().sprite;
+        characterHealthBar.InitName(CharacterController.instance.GetCharacterName());
+    }
+
     [SerializeField] private HealthBar characterHealthBar;
     [SerializeField] private HealthBar enemyHealthBar;
     [SerializeField] private Image characterImage;

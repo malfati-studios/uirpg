@@ -15,7 +15,10 @@ public class CombatController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
-    
 
+
+    public void caquita()
+    {
+        
+    }
 }

@@ -140,7 +140,7 @@ public class CharacterCreator : MonoBehaviour
     public void ConfirmCharacter()
     {
         CharacterController.instance.SetRaceAndClass(inputName.text, raceInfo, classInfo,
-            characterImage.GetComponent<Image>().sprite);
+            characterImage.GetComponent<Image>());
         SceneController.instance.LoadCombatScene();
     }
 }

@@ -21,4 +21,9 @@ public class HealthBar : MonoBehaviour
         txtHealth.text = currentHp.ToString() + "/" + hpMax.ToString();
         fill.fillAmount = (float) currentHp / (float) hpMax;
     }
+
+    public void InitName(string name)
+    {
+        txtName.text = name;
+    }
 }

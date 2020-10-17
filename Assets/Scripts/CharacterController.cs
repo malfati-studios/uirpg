@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class CharacterController : MonoBehaviour
 {
@@ -20,8 +21,18 @@ public class CharacterController : MonoBehaviour
     }
 
     public void SetRaceAndClass(string characterName, RaceInformation race, ClassInformation clazz,
-        Sprite characterImage)
+        Image characterImage)
     {
         selectedCharacter = new Character(characterName, race, clazz, characterImage);
+    }
+
+    public Image GetCharacterImage()
+    {
+        return selectedCharacter.GetCharacterImage();
+    }
+    
+    public string GetCharacterName()
+    {
+        return selectedCharacter.GetCharacterName();
     }
 }
