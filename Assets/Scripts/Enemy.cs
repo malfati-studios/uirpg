@@ -66,4 +66,9 @@ public class Enemy : MonoBehaviour
 
         return currentHp < 1;
     }
+
+    public static Action DecideAction()
+    {
+        return (Action) Random.Range(0, 4);
+    }
 }

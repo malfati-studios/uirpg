@@ -3,7 +3,6 @@ using UnityEngine.UI;
 
 public class EnemyController : MonoBehaviour
 {
-  
     [SerializeField] private Enemy currentEnemy;
 
     public static EnemyController instance;
@@ -25,7 +24,7 @@ public class EnemyController : MonoBehaviour
     {
         return currentEnemy.GetCharacterImage();
     }
-    
+
     public string GetEnemyName()
     {
         return currentEnemy.GetCharacterName();
@@ -53,11 +52,11 @@ public class EnemyController : MonoBehaviour
 
     public bool CalculateEvasion()
     {
-        throw new System.NotImplementedException();
+        return currentEnemy.CalculateEvasion(true);
     }
 
     public Action DecideAction()
     {
-        throw new System.NotImplementedException();
+        return Enemy.DecideAction();
     }
 }
