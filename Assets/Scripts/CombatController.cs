@@ -19,10 +19,10 @@ public class CombatController : MonoBehaviour
 
     public void Attack()
     {
-        Action enemyAction = EnemyController.DecideAction();
+        Action enemyAction = EnemyController.instance.DecideAction();
         if (enemyAction == Action.EVADE)
         {
-            if (EnemyController.CalculateEvasion())
+            if (EnemyController.instance.CalculateEvasion())
             {
                 UIController.instance.UpdateCharacterLog(Action.ATTACK);
                 UIController.instance.UpdateEnemyLog(Action.EVADE);
@@ -30,7 +30,7 @@ public class CombatController : MonoBehaviour
             else
             {
                 int playerDamage = CharacterController.instance.Attack();
-                EnemyController.TakeDamage(playerDamage);
+                EnemyController.instance.TakeDamage(playerDamage);
                 UIController.instance.UpdateCharacterLog(Action.ATTACK, playerDamage);
                 UIController.instance.UpdateEnemyLog(Action.EVADE, false);
             }
@@ -39,10 +39,10 @@ public class CombatController : MonoBehaviour
         if (enemyAction == Action.HEAL)
         {
             int playerDamage = CharacterController.instance.Attack();
-            bool died = EnemyController.TakeDamage(playerDamage);
+            bool died = EnemyController.instance.TakeDamage(playerDamage);
             if (!died)
             {
-                int healthRestored = EnemyController.Heal();
+                int healthRestored = EnemyController.instance.Heal(StatConstants.POTION_HEALTH_RESTORE_AMOUNT);
                 UIController.instance.UpdateCharacterLog(Action.ATTACK, playerDamage);
                 UIController.instance.UpdateEnemyLog(Action.HEAL, healthRestored);
             }
@@ -56,8 +56,8 @@ public class CombatController : MonoBehaviour
         if (enemyAction == Action.ATTACK)
         {
             int playerDamage = CharacterController.instance.Attack();
-            EnemyController.TakeDamage(playerDamage);
-            int enemyDamage = EnemyController.Attack();
+            EnemyController.instance.TakeDamage(playerDamage);
+            int enemyDamage = EnemyController.instance.Attack();
             CharacterController.instance.TakeDamage(enemyDamage);
             UIController.instance.UpdateCharacterLog(Action.ATTACK, playerDamage);
             UIController.instance.UpdateEnemyLog(Action.ATTACK, enemyDamage);
@@ -66,11 +66,11 @@ public class CombatController : MonoBehaviour
 
     public void Heal()
     {
-        Action enemyAction = EnemyController.DecideAction();
+        Action enemyAction = EnemyController.instance.DecideAction();
     }
 
     public void Evade()
     {
-        Action enemyAction = EnemyController.DecideAction();
+        Action enemyAction = EnemyController.instance.DecideAction();
     }
 }
