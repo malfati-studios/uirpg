@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Warrior
   m_EditorClassIdentifier: 
   name: Warrior
+  baseDamage: 10
   strVal: 10
   dexVal: 2
   intVal: 0

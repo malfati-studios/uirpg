@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class CombatController : MonoBehaviour
 {
@@ -16,8 +17,7 @@ public class CombatController : MonoBehaviour
         }
     }
 
-
-    public void caquita()
+    private void Start()
     {
         
     }

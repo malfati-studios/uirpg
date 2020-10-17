@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Ranger
   m_EditorClassIdentifier: 
   name: Ranger
+  baseDamage: 5
   strVal: 2
   dexVal: 10
   intVal: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Mage
   m_EditorClassIdentifier: 
   name: Mage
+  baseDamage: 10
   strVal: 0
   dexVal: 2
   intVal: 10

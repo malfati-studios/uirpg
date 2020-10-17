@@ -19,7 +19,7 @@ public class CharacterController : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    
     public void SetRaceAndClass(string characterName, RaceInformation race, ClassInformation clazz,
         Image characterImage)
     {
